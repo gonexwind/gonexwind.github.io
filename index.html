@@ -1,12 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fikky Ardianto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
+
 <body>
-    <p>Hello World</p>
-    
+
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+
+    <header>
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQG1xcTGBat-3w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726499156252?e=2147483647&v=beta&t=MotoOars-jQfpNJAm-zdTEkeQeKpxBKefHbvSKHzW5o"
+            alt="Profile Photo">
+        <div class="header-info">
+            <h1>Fikky Ardianto</h1>
+            <p>fikkyardianto@gmail.com | Yogyakarta, Indonesia</p>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/fikkyardianto" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/gonexwind" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.cake.me/fikky-ardianto" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-pdf"></i>
+            </a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>Master in Computer Science</strong> – <a href="https://utdi.ac.id" target="_blank">Universitas
+                    Teknologi Digital Indonesia</a> (2024 - 2026)</li>
+            <li><strong>Bachelor in Computer Science</strong> – <a href="https://umk.ac.id" target="_blank">Universitas
+                    Muria Kudus</a> (2018 - 2023)</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Project 1">
+                <a href="https://bantulpedia.bantulkab.go.id/" target="_blank">
+                    <h3>Bantulpedia</h3>
+                </a>
+                <p>A public service app enhancing citizen access to government information and services in Bantul.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Project 2">
+                <a href="https://play.google.com/store/apps/details?id=com.terasmitra.laporsampah&hl=en_US"
+                    target="_blank">
+                    <h3>Lapor Sampah</h3>
+                </a>
+                <p>A digital platform that enables users to report, track, and manage waste issues in their community
+                    quickly and efficiently.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Project 3">
+                <a href="https://bos.bantulkab.go.id/" target="_blank">
+                    <h3>Bantul Online Shop</h3>
+                </a>
+                <p>An e-commerce application that connects local sellers and buyers in Bantul, offering a convenient
+                    platform for shopping and promoting regional products.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Project 4">
+                <a href="https://apps.apple.com/id/app/bos-seller/id6736641125" target="_blank">
+                    <h3>Bantul Online Shop Seller</h3>
+                </a>
+                <p>A dedicated platform for local entrepreneurs in Bantul to showcase, manage, and sell their products
+                    online easily and efficiently.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Project 5">
+                <a href="https://apps.apple.com/id/app/gits-genius-hr/id1629598577" target="_blank">
+                    <h3>Genius HR</h3>
+                </a>
+                <p>A mobile-based application designed and built to help business, especially related to Human Resources
+                    (HR) management.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="stacks">
+        <h2>Tech Stacks</h2>
+        <div class="stack-list">
+            <div class="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                    alt="Flutter">
+                <p>Flutter</p>
+            </div>
+            <div class="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">
+                <p>Kotlin</p>
+            </div>
+            <div class="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="iOS">
+                <p>iOS</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form" action="mailto:yourname@email.com" method="POST" enctype="text/plain">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Fikky Ardianto. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.body.getAttribute("data-theme");
+            const btn = document.querySelector(".theme-toggle");
+            if (currentTheme === "dark") {
+                document.body.removeAttribute("data-theme");
+                btn.textContent = "🌙 Dark";
+            } else {
+                document.body.setAttribute("data-theme", "dark");
+                btn.textContent = "☀️ Light";
+            }
+        }
+    </script>
 </body>
+
 </html>

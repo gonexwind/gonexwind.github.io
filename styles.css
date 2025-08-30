@@ -1,0 +1,295 @@
+:root {
+    --bg: #ffffff;
+    --text: #2c3e50;
+    --card: #f4f4f4;
+    --primary: #3498db;
+}
+
+[data-theme="dark"] {
+    --bg: #1e1e1e;
+    --text: #f4f4f4;
+    --card: #2c2c2c;
+    --primary: #9b59b6;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 1.8rem;
+    color: var(--text);
+    transition: color 0.3s, transform 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--primary);
+    transform: scale(1.2);
+}
+
+
+.stack-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stack-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.stack-item img:hover {
+  transform: scale(1.2);
+}
+
+.stack-item p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+a {
+    color: var(--primary);
+    /* warna default link */
+    text-decoration: none;
+    /* hilangkan underline */
+    font-weight: 500;
+    /* agak tebal */
+    transition: color 0.3s ease;
+    /* animasi saat hover */
+}
+
+a:hover {
+    color: #2980b9;
+    /* ganti warna saat hover */
+    text-decoration: underline;
+    /* underline muncul saat hover */
+}
+
+a:visited {
+    color: #8e44ad;
+    /* warna jika sudah pernah diklik */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    animation: fadeIn 1s ease;
+}
+
+header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary);
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.05);
+}
+
+.header-info {
+    margin-bottom: 1rem;
+}
+
+.cv-btn {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cv-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.5s ease;
+}
+
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 1rem;
+    animation: fadeIn 2s ease;
+}
+
+h2 {
+    border-left: 5px solid var(--primary);
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+}
+
+.project-card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: var(--bg);
+    color: var(--text);
+    transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid var(--primary);
+    outline: none;
+}
+
+.contact-form button {
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #2980b9;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    background: var(--card);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: #2980b9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
