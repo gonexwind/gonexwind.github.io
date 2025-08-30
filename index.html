@@ -55,14 +55,14 @@
         <h2>Projects</h2>
         <div class="projects">
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x200" alt="Project 1">
+                <img class="project-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Ian_di_Musinsa_Beauty_Festa_Pop-Up_Store_2025.jpg/1200px-Ian_di_Musinsa_Beauty_Festa_Pop-Up_Store_2025.jpg" alt="Project 1">
                 <a href="https://bantulpedia.bantulkab.go.id/" target="_blank">
                     <h3>Bantulpedia</h3>
                 </a>
                 <p>A public service app enhancing citizen access to government information and services in Bantul.</p>
             </div>
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x200" alt="Project 2">
+                <img class="project-img" src="https://via.placeholder.com/400x200" alt="Project 2">
                 <a href="https://play.google.com/store/apps/details?id=com.terasmitra.laporsampah&hl=en_US"
                     target="_blank">
                     <h3>Lapor Sampah</h3>
@@ -71,7 +71,7 @@
                     quickly and efficiently.</p>
             </div>
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x200" alt="Project 3">
+                <img class="project-img" src="https://via.placeholder.com/400x200" alt="Project 3">
                 <a href="https://bos.bantulkab.go.id/" target="_blank">
                     <h3>Bantul Online Shop</h3>
                 </a>
@@ -79,7 +79,7 @@
                     platform for shopping and promoting regional products.</p>
             </div>
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x200" alt="Project 4">
+                <img class="project-img" src="https://via.placeholder.com/400x200" alt="Project 4">
                 <a href="https://apps.apple.com/id/app/bos-seller/id6736641125" target="_blank">
                     <h3>Bantul Online Shop Seller</h3>
                 </a>
@@ -87,7 +87,7 @@
                     online easily and efficiently.</p>
             </div>
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x200" alt="Project 5">
+                <img class="project-img" src="https://via.placeholder.com/400x200" alt="Project 5">
                 <a href="https://apps.apple.com/id/app/gits-genius-hr/id1629598577" target="_blank">
                     <h3>Genius HR</h3>
                 </a>
@@ -96,6 +96,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Popup / Modal -->
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
 
     <section id="stacks">
         <h2>Tech Stacks</h2>
@@ -119,7 +126,8 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <form class="contact-form" action="mailto:yourname@email.com" method="POST" enctype="text/plain">
+        <form class="contact-form" action="mailto:fikkyardianto@gmail.com?subject=Portfolio Inquiry" method="POST"
+            enctype="text/plain">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <textarea rows="5" placeholder="Your Message" required></textarea>
@@ -143,6 +151,34 @@
                 btn.textContent = "☀️ Light";
             }
         }
+
+        // Ambil elemen modal
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("modalImg");
+        const caption = document.getElementById("caption");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        // Semua gambar project
+        document.querySelectorAll(".project-img").forEach(img => {
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                caption.innerHTML = this.alt;
+            }
+        });
+
+        // Tombol close
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Tutup modal kalau klik di luar gambar
+        modal.onclick = function (e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
     </script>
 </body>
 
